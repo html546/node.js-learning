@@ -1,8 +1,8 @@
 # Node.js
 
-## Node.js介绍
+## 1 Node.js介绍
 
-### 为什么要学习Node.js
+### 1.1. 为什么要学习Node.js
 
 - 企业需求
   + 具有服务端开发经验更好
@@ -16,7 +16,7 @@
     + 运维部署
   + 多人社区
 
-### Node.js是什么
+### 1.2. Node.js是什么
 
 - Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://developers.google.com/v8/). 
   - Node.js不是一门语言
@@ -44,6 +44,11 @@
     - 网络通信
     - http服务器
     - 等处理...
+- 构建于Chrome的V8引擎之上
+  - 代码只是具有特定格式的字符串而已
+  - 引擎可以认识它 引擎可以帮你去解析和执行
+  - Google Chrome的V8引擎是目前公认的解析执行javascript代码最快的
+  - Node.js的作者把Google Chrome 中的V8引擎移植了出来，开发了一个独立的javascript运行时环境
 - Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
   - event-driven 事件驱动
   - non-blocking I/O model 非阻塞IO模型(异步)
@@ -54,15 +59,72 @@
   - 绝大多数javascript相关的包都存放在了npm上，这样做的目的是为了开发人员更方便的去下载使用我.
   - ```npm install jquery```
 
-### Node.js能做什么
+### 1.3. Node.js能做什么
+- Web服务器后台
+- 命令行工具
+  - npm(node)
+  - git(c语言)
+  - hexo(node)
+  - ...
+- 对于前端开发工程师来讲，接触node最多的是它的命令行工具
+  - 自己写的很少，主要是使用别人第三方的
+  - webpack
+  - gulp
+  - npm 
 
-
-### 预备知识
+### 1.4. 预备知识
 
 - HTML
 - CSS
 - Javascript
 - 简单的命令行操作
+  - cd
+  - dir
+  - ls
+  - mkdir
+  - rm
 - 具有服务端开发经验更佳
 
-### 一些资源
+### 1.5. 一些资源
+  - 《深入浅出Node.js》
+    - 朴灵
+    - 偏理论，几乎没有任何实战性内容
+    - 理解原理底层有帮助
+    - 结合课程的学习去看
+  - 《Node.js权威指南》
+    - API 讲解
+    - 也没有业务，没有实战
+  - javascript标准参考教程(alpha):http://javascript.ruanyifeng.com/
+  - Node入门: http://www.nodebeginner.org/index-zh-cn.html
+  - 官方API文档: https://nodejs.org/dist/latest-v6.x/docs/api/
+  - 中文文档(版本比较旧，凑合看):http://www.nodeclass.com/api/node.html
+  - CNODE社区:http://cnode.js.org
+  - CNODE-新手入门:http://cnodejs.org/getstart
+
+### 1.6. 这门课程你能学到啥?
+  - B/S 编程模型
+    - Browser -Server
+    - back-end
+    - 任何服务端技术这种BS编程模型都是一样，和语言无关
+    - Node 只是作为我们学习BS编程模型的一个工具而已
+  - 模块化编程
+    - RequireJS
+    - Seajs
+    - `@import('文件路径')`
+    - 以前认知的javascript只能通过`script`标签来加载
+    - 在Node中可以像`@import()`一样来引用加载javascript脚本文件
+  - Node常用API
+  - 异步编程
+    - 回调函数
+    - Promise
+    - async
+    - generator
+  - Express Web 开发框架
+  - Ecmascript6
+    - 在课程中穿插讲解
+    - 它只是一个新的语法而已
+  - ...
+  - 学习Node不仅会帮助大家打开服务端黑盒子，同时会帮助你学习以后的前端高级内容
+    - Vue.js
+    - React
+    - angular
