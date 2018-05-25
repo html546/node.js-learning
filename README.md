@@ -150,23 +150,82 @@
 2.打开终端，定位到脚本文件所属目录
 3.输入`node文件名`执行对应的文件
 注意:文件名不要使用`node.js`来命名,也就是说除了`node`这个名字你随便起,而且最好也不要使用中文
-- 解析执行Javascript
+#### 2.2.1.解析执行Javascript
 
-- 读写文件
+#### 2.2.2.读写文件
+读取文件
 
-- http
+```
+// 浏览器中的Javascript是没有文件操作的能力的
+// 但是Node中的Javascript具有文件操作的能力
 
-  
+// fs 是filesystem的简写，就是文件系统的意思
+// 在Node中 如果想要进行文件操作，就必须引入fs这个核心模块
+// 在fs这个核心模块中，就提供了所有的文件操作相关的API
+// 例如：fs.readFile 就是用来读取文件的
 
-## 3. Node中的Javascript
+//1.使用require方法加载fs核心模块 
+var fs = require('fs');
 
-	- EcmaScript
-	- 核心模块
-	- 第三方模块
-	- 用户自定义模块
-	最简单的http服务:
-	```
-	Javascript
+// 2.读取文件
+// 第一个参数就是要读取的文件路径
+// 第二个参数是一个回调函数
+// 	
+// 	成功
+// 		data数据
+// 		error null
+// 	失败
+// 		data undefined 没有数据
+// 		error 错误对象
+fs.readFile('./data/a.txt',function(error,data){
+	// <Buffer 68 65 6c 6c 6f 20 6e 6f 64 65 6a 73>
+	// 文件中存储的其实都是二进制数据 0 1
+	// 这里为什么看到的不是0 和 1 呢?原因是二进制转为16进制了
+	// 但是无论是二进制还是16进制，人类都不认识
+	// 所以我们可以通过toString方法把其转为我们能认识的字符
+	// console.log(data);
+	// console.log(error);
+	// console.log(data.toString());
+	// 在这里就可以通过判断error来确认是否有错误发生
+	if(error){
+		console.log('读取文件失败了');
+		return
+	}
+	console.log(data.toString());
+});
+```
+写入文件
+
+```
+var fs = require('fs');
+// 第一个参数:文件路径
+// 第二个参数:文件内容
+// 第三个参数:回调函数
+// 		error
+// 		
+// 		成功:
+// 			文件写入成功
+// 			error是null
+// 		失败:
+// 			文件写入失败
+// 			error就是错误对象
+fs.writeFile('./data/你好.md','大家好,给大家介绍一下,我是Node.js',function(error){
+	// console.log('文件写入成功');
+	// console.log(error);
+	if(error){
+		console.log('写入失败');
+	}else{
+		console.log('写入成功了');
+	}
+})
+
+```
+
+
+#### 2.2.3. http
+最简单的http服务:
+
+​	Javascript
 	// 接下来，我们要干一件使用node很有成就感的一件事儿
 	// 你可以使用Node非常轻松的构建一个Web服务器
 	// 在Node中专门提供了一个核心模块:http
@@ -194,11 +253,22 @@
 	server.listen(3000,function(){
 		console.log('服务器启动成功了，可以通过http://127.0.0.1:3000/来进行访问');
 	})
-	
-	
+
+
+​	
 	```
   ![1527240024047](https://raw.githubusercontent.com/html546/node.js-learning/master/1527240024047.png)
 
+  
+
+## 3. Node中的Javascript
+
+	- EcmaScript
+	- 核心模块
+	- 第三方模块
+	- 用户自定义模块
+
 ------
 
-  
+
+## 4.NodeJS的模块化系统
