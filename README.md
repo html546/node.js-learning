@@ -197,7 +197,7 @@
 	
 	
 	```
-  ![1527240024047](C:\Users\ADMINI~1\AppData\Local\Temp\1527240024047.png)
+  ![1527240024047](https://raw.githubusercontent.com/html546/node.js-learning/master/1527240024047.png)
 
 ------
 
