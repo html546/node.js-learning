@@ -155,7 +155,7 @@
 #### 2.2.2.读写文件
 读取文件
 
-```
+```javascript
 // 浏览器中的Javascript是没有文件操作的能力的
 // 但是Node中的Javascript具有文件操作的能力
 
@@ -196,7 +196,7 @@ fs.readFile('./data/a.txt',function(error,data){
 ```
 写入文件
 
-```
+```javascript
 var fs = require('fs');
 // 第一个参数:文件路径
 // 第二个参数:文件内容
@@ -226,7 +226,7 @@ fs.writeFile('./data/你好.md','大家好,给大家介绍一下,我是Node.js',
 最简单的http服务:
 	
 ​	Javascript
-```
+```javascript
 	// 接下来，我们要干一件使用node很有成就感的一件事儿
 	// 你可以使用Node非常轻松的构建一个Web服务器
 	// 在Node中专门提供了一个核心模块:http
@@ -260,7 +260,7 @@ fs.writeFile('./data/你好.md','大家好,给大家介绍一下,我是Node.js',
 
   ![1527240024047](https://raw.githubusercontent.com/html546/node.js-learning/master/1527240024047.png)
 
-```
+```javascript
 
 var http = require('http');
 
@@ -299,16 +299,24 @@ server.listen(3000,function(){
 
 
 ```
-  
+
 
 ## 3. Node中的Javascript
+- EcmaScript
+	- 没有DOM、BOM
+- 核心模块
+- 第三方模块
+- 用户自定义模块
+### 3.1. 核心模块
+Node 为JavaScript提供了很多服务器级别的API，这些API绝大多数都被包装到了一个具名的核心模块中了.例如文件操作的`fs`核心模块,http服务构建的`http`模块,`path`路径操作模块、`os`操作系统信息模块...
 
-	- EcmaScript
-	- 核心模块
-	- 第三方模块
-	- 用户自定义模块
+以后只要我说这个模块是一个核心模块，你就要马上想到如果想要使用它，就必须:
 
-------
+```javascript
+var fs = require('fs')
+var http = require('http')
+```
+
 
 
 ## 4.NodeJS的模块化系统
